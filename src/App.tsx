@@ -1,13 +1,14 @@
 import { useSignal } from "@preact/signals-react";
 import "./App.css";
+import { Button } from "./components/ui/button";
 
 function Counter() {
   const count = useSignal(0);
   
   return (
-    <button onClick={() => count.value++}>
+    <Button onClick={() => count.value++}>
       count is {count.value}
-    </button>
+    </Button>
   );
 }
 
