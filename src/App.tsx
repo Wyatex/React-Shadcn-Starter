@@ -1,24 +1,31 @@
 import { useSignal } from "@preact/signals-react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
-function App() {
+function Counter() {
   const count = useSignal(0);
+  
+  return (
+    <button onClick={() => count.value++}>
+      count is {count.value}
+    </button>
+  );
+}
+
+function App() {
 
   return (
     <>
-      <div>
+      <div className="flex justify-between">
         <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <div className="i-logos-vitejs logo"></div>
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <IconLogosReact className="logo react" />
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => count.value++}>count is {count.value}</button>
+        <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
