@@ -1,0 +1,20 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "theme": "Theme",
+    "language": "Language",
+    "light": "Light",
+    "dark": "Dark",
+    "english": "English",
+    "chinese": "Chinese"
+  },
+  "home": {
+    "title": "Welcome to React Template",
+    "description": "A modern React template with Vite, TypeScript, Zustand, i18n, TanStack Router, and shadcn/ui"
+  },
+  "about": {
+    "title": "About This Project",
+    "description": "This is a React project template that includes all the essential tools for building modern web applications."
+  }
+}

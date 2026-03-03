@@ -1,0 +1,20 @@
+{
+  "common": {
+    "home": "首页",
+    "about": "关于",
+    "theme": "主题",
+    "language": "语言",
+    "light": "浅色",
+    "dark": "深色",
+    "english": "英文",
+    "chinese": "中文"
+  },
+  "home": {
+    "title": "欢迎使用 React 模板",
+    "description": "一个现代化的 React 模板，包含 Vite、TypeScript、Zustand、i18n、TanStack Router 和 shadcn/ui"
+  },
+  "about": {
+    "title": "关于本项目",
+    "description": "这是一个 React 项目模板，包含了构建现代 Web 应用所需的所有基础工具。"
+  }
+}

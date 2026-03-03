@@ -1,41 +1,45 @@
 import { defineConfig } from 'vite'
-import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
-import icons from 'unplugin-icons/vite'
-import inspect from 'vite-plugin-inspect'
+import tailwindcss from '@tailwindcss/vite'
 import autoImport from 'unplugin-auto-import/vite'
 import iconsResolver from 'unplugin-icons/resolver'
-import unocss from 'unocss/vite'
+import inspect from 'vite-plugin-inspect'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [['module:@preact/signals-react-transform']],
-      },
+    tanstackRouter({
+      target: 'react',
+      autoCodeSplitting: true,
+      routesDirectory: './src/router/routes',
+      generatedRouteTree: './src/router/routeTree.gen.ts',
     }),
-    icons({
-      compiler: 'jsx',
-      jsx: 'react',
-    }),
+    react(),
+    tailwindcss(),
     inspect(),
     autoImport({
+      /**
+       * 匹配 .ts, .tsx, .js, .jsx 以及它们带 query 参数的形式
+       * 因为autoCodeSplitting会给文件添加query参数
+       */
+      include: [
+        /\.[tj]sx?(?:\?.*)?$/,
+      ],
+      imports: ['react'],
       dts: 'src/types/auto-imports.d.ts',
       resolvers: [
         iconsResolver({
           prefix: 'Icon',
           extension: 'jsx',
-        })
-      ]
+        }),
+      ],
+      defaultExportByFilename: true,
+      dirs: ['./src/components/ui/**', './src/components/**'],
     }),
-    unocss()
   ],
   resolve: {
-    alias: {
-      '~': fileURLToPath(new URL('./', import.meta.url)),
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
+    tsconfigPaths: true,
   },
   css: {
     preprocessorOptions: {

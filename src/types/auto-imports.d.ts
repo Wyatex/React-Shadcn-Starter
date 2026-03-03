@@ -6,5 +6,48 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-  const IconLogosReact: typeof import('~icons/logos/react.jsx').default
+  const Activity: typeof import('react').Activity
+  const Button: typeof import('../components/ui/button').Button
+  const DropdownMenu: typeof import('../components/ui/dropdown-menu').DropdownMenu
+  const DropdownMenuContent: typeof import('../components/ui/dropdown-menu').DropdownMenuContent
+  const DropdownMenuItem: typeof import('../components/ui/dropdown-menu').DropdownMenuItem
+  const DropdownMenuTrigger: typeof import('../components/ui/dropdown-menu').DropdownMenuTrigger
+  const Fragment: typeof import('react').Fragment
+  const LanguageSwitcher: typeof import('../components/language-switcher').LanguageSwitcher
+  const Suspense: typeof import('react').Suspense
+  const ThemeToggle: typeof import('../components/theme-toggle').ThemeToggle
+  const buttonVariants: typeof import('../components/ui/button').buttonVariants
+  const cache: typeof import('react').cache
+  const cacheSignal: typeof import('react').cacheSignal
+  const createContext: typeof import('react').createContext
+  const createRef: typeof import('react').createRef
+  const forwardRef: typeof import('react').forwardRef
+  const lazy: typeof import('react').lazy
+  const memo: typeof import('react').memo
+  const startTransition: typeof import('react').startTransition
+  const use: typeof import('react').use
+  const useActionState: typeof import('react').useActionState
+  const useCallback: typeof import('react').useCallback
+  const useContext: typeof import('react').useContext
+  const useDebugValue: typeof import('react').useDebugValue
+  const useDeferredValue: typeof import('react').useDeferredValue
+  const useEffect: typeof import('react').useEffect
+  const useEffectEvent: typeof import('react').useEffectEvent
+  const useId: typeof import('react').useId
+  const useImperativeHandle: typeof import('react').useImperativeHandle
+  const useInsertionEffect: typeof import('react').useInsertionEffect
+  const useLayoutEffect: typeof import('react').useLayoutEffect
+  const useMemo: typeof import('react').useMemo
+  const useOptimistic: typeof import('react').useOptimistic
+  const useReducer: typeof import('react').useReducer
+  const useRef: typeof import('react').useRef
+  const useState: typeof import('react').useState
+  const useSyncExternalStore: typeof import('react').useSyncExternalStore
+  const useTransition: typeof import('react').useTransition
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { ButtonProps } from '../components/ui/button'
+  import('../components/ui/button')
 }
